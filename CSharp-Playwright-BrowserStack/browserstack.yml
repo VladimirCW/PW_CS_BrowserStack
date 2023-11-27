@@ -3,8 +3,8 @@
 # =============================
 # Add your BrowserStack userName and accessKey here or set BROWSERSTACK_USERNAME and
 # BROWSERSTACK_ACCESS_KEY as env variables
-userName: YOUR_USERNAME
-accessKey: YOUR_ACCESS_KEY
+userName: {{name}}
+accessKey: {{key}}
 
 # ======================
 # BrowserStack Reporting
@@ -27,18 +27,21 @@ buildIdentifier: '#${BUILD_NUMBER}' # Supports strings along with either/both ${
 # Platforms object contains all the browser / device combinations you want to test on.
 # Entire list available here -> (https://www.browserstack.com/list-of-browsers-and-platforms/automate)
 platforms:
-  - os: Windows
-    osVersion: 11
+#  - os: Windows
+#    osVersion: 11
+#    browserName: chrome
+#    browserVersion: latest
+#  - os: OS X
+#    osVersion: Ventura
+#    browserName: playwright-webkit
+#    browserVersion: latest
+#  - os: Windows
+#    osVersion: 11
+#    browserName: playwright-firefox
+#    browserVersion: latest
+  - deviceName: Samsung Galaxy S22 Ultra
     browserName: chrome
-    browserVersion: latest
-  - os: OS X
-    osVersion: Ventura
-    browserName: playwright-webkit
-    browserVersion: latest
-  - os: Windows
-    osVersion: 11
-    browserName: playwright-firefox
-    browserVersion: latest
+    osVersion: 12.0
 
 # ==========================================
 # BrowserStack Local
@@ -46,7 +49,7 @@ platforms:
 # ==========================================
 # Set browserStackLocal to true if your website under test is not accessible publicly over the internet
 # Learn more about how BrowserStack Local works here -> https://www.browserstack.com/docs/automate/selenium/local-testing-introduction
-browserstackLocal: true # <boolean> (Default false)
+browserstackLocal: false # <boolean> (Default false)
 # browserStackLocalOptions:
 # Options to be passed to BrowserStack local in-case of advanced configurations
   # localIdentifier: # <string> (Default: null) Needed if you need to run multiple instances of local.
